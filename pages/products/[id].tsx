@@ -14,17 +14,22 @@ import { Spinner } from '../../components/spinner';
 import Link from 'next/link';
 import Swal from 'sweetalert2'
 
-const Title = styled.h1`
-font-size: 2.9rem;
-font-weight: bold;
-text-align: left;
-margin: 1em 0;
-    @media (max-width: 768px) {
-        font-size: 2.2rem;
-        text-align: center;
-        margin-bottom: 1em;
+
+const Wrapper = styled.div`
+    max-width: 95%;
+    background: #f5f5f5;
+    margin: 3rem auto;
+    padding: 3rem;
+    @media (min-width: 768px) {
+    padding: 2rem 2rem 2rem 10rem;
     }
+    border-radius: 15px;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
 `
+
 const Container = styled.div`
     padding: 0% 15% 10%; 
     p{
@@ -38,6 +43,18 @@ const Container = styled.div`
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(600px, auto));
         grid-auto-flow: row;
+    }
+`
+
+const Title = styled.h1`
+font-size: 2.9rem;
+font-weight: bold;
+text-align: left;
+margin: 1em 0;
+    @media (max-width: 768px) {
+        font-size: 2.2rem;
+        text-align: center;
+        margin-bottom: 1em;
     }
 `
 
@@ -64,17 +81,19 @@ const Li = styled.li`
     list-style: none;
     font-family: 'PT Sans', sans-serif;
     padding: 1em 0 0 0;
-    margin: 1em 1em 0;
+    margin: 1em 1em 1em;
     border-bottom: 1px solid #e1e1e1;
     span{
         font-weight: bold;
-        border-bottom: 1px solid #ccc;
-        padding-bottom: 2%;
+        padding: 3% 0;
+        text-transform: uppercase;
     }
 `
 const Msg = styled.p`
-    font-size: 1.5rem;
-    margin-left: 1rem;
+    margin-left: 2rem ;
+    display: block;
+    padding-top: 1rem;
+    
 `
 const Input = styled.input`
     width: 100%;
@@ -86,20 +105,7 @@ const Input = styled.input`
     font-family: 'PT Sans', sans-serif;
 
     `
-const Wrapper = styled.div`
-    max-width: 95%;
-    background: #f5f5f5;
-    margin: 3rem auto;
-    padding-bottom:3rem;
-    @media (min-width: 768px) {
-    padding: 2rem 2rem 2rem 10rem;
-    }
-    border-radius: 15px;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.3);
-    margin-top: 3rem;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
-`
+
 
 const Creator = styled.p`
     padding: .5rem;
@@ -374,13 +380,13 @@ export default function Product(): JSX.Element {
                                 comments && comments?.length === 0 ? "There are no coments" : (
 
                                     <ul>
-                                        {comment.userName && comments?.map((comment: Comment, i: number) => (
+                                        {comment && comments?.map((comment: Comment, i: number) => (
                                             <Li
                                                 key={`${comment.userid}-${i}`}
                                             >
                                                 <div>
                                                     {isCreator(comment.userid) && <Creator>Creator</Creator>}
-                                                    <span>{comment.userName}</span>
+                                                    <span>@{comment.userName}</span>
                                                 </div>
                                                 <Msg>{comment.message}</Msg>
                                             </Li>

@@ -7,6 +7,7 @@ import { ProductProps } from "../../interfaces"
 
 const Li = styled.div`
     padding: 2rem;
+    cursor: pointer;
     display: flex;
     justify-content: space-between;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.2);
@@ -41,16 +42,16 @@ const Description = styled.div`
     `
 const Title = styled.button`
     font-weight: bold;
-    display: block;
+    display: inline-block;
     margin: 3rem 0 1rem 0;
     background-color: transparent;
     border: none;
     font-size:2.5rem;
     text-decoration: none;
-    color: var(--orange2);
-    
+    color: var(--orange);
     &:hover{
-        color: var(--orange);
+        transition: all .4s ease-in-out;
+        transform: scale(1.0150);
         cursor: pointer;
     }
     @media (max-width: 468px) {
