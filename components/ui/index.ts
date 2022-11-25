@@ -60,6 +60,10 @@ export const ButtonNav2 = styled.button`
             cursor:pointer;
             transition: all 0.3s ease-in;
         }
+
+        @media (max-width: 768px) {
+            margin: 0 auto;
+        }
     `;
 
 export const Form = styled.form`

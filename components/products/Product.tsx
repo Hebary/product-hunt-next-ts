@@ -10,7 +10,7 @@ const Li = styled.div`
     cursor: pointer;
     display: flex;
     justify-content: space-between;
-    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.2);
+    border-bottom: 1px solid #d3d3d3;
     align-items: center;
     font-family: 'Nunito', sans-serif;
     background-color: #fff;
