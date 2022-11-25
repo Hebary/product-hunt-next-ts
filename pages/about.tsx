@@ -30,7 +30,7 @@ p{
 export default function about() {
     return (
         <Layout>
-            <Container>
+            <Container className='animate'>
 
             <Image src='https://ph-static.imgix.net/glasshole_kitty_logo.png?auto=compress&codec=mozjpeg&cs=strip&auto=format&w=77&h=72&fit=max&dpr=1' width={150} height={180} alt='about-logo'></Image>
             <h1>About Product Hunt</h1>

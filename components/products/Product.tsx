@@ -13,15 +13,16 @@ const Li = styled.div`
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.2);
     align-items: center;
     font-family: 'Nunito', sans-serif;
-    transition: all .4s ease-in-out;
+    background-color: #fff;
+    transition: all 0.3s ease-in-out;
 
     &:hover {
-        background: linear-gradient(to right, #FFF, #f941416d); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(133deg, #FFF 40%, #fd2f2f46); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         curosor: pointer;
-        transition: all .4s ease-in-out;
+        transition: all 0.3s ease-in-out;
+         
     }
-
-    }
+    
     @media (max-width: 768px) {
         flex-wrap: wrap;    
         justify-content: end;
@@ -70,12 +71,12 @@ const Coments = styled.div`
         display: flex;
         align-items: center;
         padding: 0.3rem .6rem;
-        margin-right: 2rem;
+        margin-right: 1.5rem;
     }
     svg{
         width: 30px;
         height: 30px;
-        margin-right: 2rem;
+        margin-right: .5rem;
 
     }
     p{
@@ -90,15 +91,16 @@ const Coments = styled.div`
 
 const Votes = styled.div`
     display: flex;
-    padding: 0.3 2rem;
+    padding: 2rem;
     gap: .5rem;
+    align-items: center;
+    border: 1px solid #e1e4e8;
     div{
         display:flex;
         font-size: 2rem;
     }
     p{
-        font-size: 2rem;
-        margin:0;
+        font-size: 1.3rem;
         font-weight: 700;
         padding-bottom: .5rem;
     }
@@ -113,7 +115,7 @@ const Pdescription = styled.p`
 export const Product = ({ product }: ProductProps) => {
     const { name, id, comments, createdAt, urlImg, votes, description } = product;
     return (
-        <Li>
+        <Li className='animate'>
             <Description>
                 <div>
                     <Image width={350} style={{ objectFit: 'contain' }} height={200} src={urlImg} alt="product" />
@@ -138,7 +140,7 @@ export const Product = ({ product }: ProductProps) => {
             </Description>
             <Votes>
                 <div>&#9650;</div>
-                <p>{votes} Votes</p>
+                <p>{votes} <span>Votes</span></p>
             </Votes>
         </Li>
     )
