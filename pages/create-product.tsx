@@ -15,14 +15,14 @@ import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 // 
 
 
-type Img = {name:string | null , url:string | null | undefined | Blob }  
+type Img = { name: string | null, url: string | null | undefined | Blob }
 
 export default function NewProduct(): JSX.Element {
 
 
   const router = useRouter()
   const [error, setError] = useState(false)
-  const [img, setImg] = useState<Img>({name:null, url:null})
+  const [img, setImg] = useState<Img>({ name: null, url: null })
   const [urlImg, setUrlImg] = useState('')
 
   const { user, firebase } = useContext(FirebaseContext)
@@ -46,7 +46,7 @@ export default function NewProduct(): JSX.Element {
 
   const { name, company, description, url } = values;
 
-  const handleFile = (e : any) => {
+  const handleFile = (e: any) => {
     if (e.target.files[0]) {
       setImg(e.target.files[0])
     }
@@ -85,21 +85,21 @@ export default function NewProduct(): JSX.Element {
       } catch (error) {
         console.error(error)
       } finally {
-        setImg({name:null, url:null})
+        setImg({ name: null, url: null })
       }
     }
   }
 
-    const handleUrl = async ()=> {
-      // upload img and get URL
-        const storageRef = ref(firebase.storage,'products/'+img?.name)
-        await uploadBytes(storageRef, (img as any))
-        getDownloadURL(storageRef)
-          .then(url=>{
-            setUrlImg(url)
-          })
-          return urlImg
-      }
+  const handleUrl = async () => {
+    // upload img and get URL
+    const storageRef = ref(firebase.storage, 'products/' + img?.name)
+    await uploadBytes(storageRef, (img as any))
+    getDownloadURL(storageRef)
+      .then(url => {
+        setUrlImg(url)
+      })
+    return urlImg
+  }
 
 
   return (
@@ -117,7 +117,7 @@ export default function NewProduct(): JSX.Element {
             onSubmit={handleSubmit}
             noValidate
           >
-            <h4>We'll need some details, and you'll be able to post</h4>
+            <h4>We&apos;ll need some details, and you&apos;ll be able to post</h4>
             <Field>
               <label htmlFor="name">Name</label>
               <input
