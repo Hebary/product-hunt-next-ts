@@ -17,10 +17,9 @@ const Li = styled.div`
     transition: all 0.3s ease-in-out;
 
     &:hover {
-        background: linear-gradient(133deg, #FFF 40%, #fd2f2f46); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        background: linear-gradient(44deg, #FFF 50%, #fd2f2f46); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
         curosor: pointer;
         transition: all 0.3s ease-in-out;
-         
     }
     
     @media (max-width: 768px) {
@@ -139,7 +138,7 @@ export const Product = ({ product }: ProductProps) => {
                 </div>
             </Description>
             <Votes>
-                <div>&#9650;</div>
+                <Image alt='arrow-votes' width={14} height={14} style={{marginBottom:'7px'}} src='/arrow.svg'></Image>
                 <p>{votes} <span>Votes</span></p>
             </Votes>
         </Li>

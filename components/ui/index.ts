@@ -51,14 +51,10 @@ export const ButtonNav2 = styled.button`
     padding : .5rem 2rem;
     margin: 2rem auto;
     border-radius: .7rem;
-    color:#fff;
+    color: #fff;
     text-align: center;
     font-family: 'Nunito', sans-serif;
     background-color: var(--orange);
-        
-        &:last-of-type {
-            margin-right: none;
-        }
         &:hover {
             background-color: var(--orange2);
             cursor:pointer;
@@ -129,7 +125,7 @@ export const Submit = styled.input`
     `;
 
 
-export const Errors = styled.p`
+export const Errors = styled.span`
         background-color :rgb(200,200,200);
         color: #000;
         font-family : "Nunito", sans-serif;
@@ -184,12 +180,11 @@ export const Logo = styled.span`
         margin: 1.5rem auto;
         font-family: 'Nunito', sans-serif;
         color: #fff;
-        padding: 0.2rem 1.3rem 0;
+        padding: 0.4rem 1.5rem;
         border-radius: 99%;
         &:hover {
           cursor:pointer;
         }
-
         @media (max-width: 768px) {
             display:inline-block;
             margin-top: 1rem;

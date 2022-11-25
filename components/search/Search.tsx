@@ -11,9 +11,6 @@ export const InputText = styled.input`
     max-width: 300px;
     padding: 1.3rem;
     border: 1px solid var(--gray3);
-    @media (min-width: 768px) {
-        margin: 0 0 0 4em;
-    }
     &:focus{
         outline: none;
     }
@@ -35,6 +32,7 @@ const InputBtn = styled.button`
 `;
 const Form = styled.form`
     position: relative;
+    left:7px;
     @media (max-width: 768px) {
         margin: 0 auto;
     }

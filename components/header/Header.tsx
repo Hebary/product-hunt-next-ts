@@ -15,7 +15,8 @@ export const Header: React.FC = () => {
       <HeaderContainer>
         <LinkWrapper>
           <Link href="/">
-            <Logo>P</Logo>
+            <Logo>
+              P</Logo>
           </Link>
           <LinkWrapper>
             <Search />

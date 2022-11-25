@@ -6,33 +6,37 @@ import { Layout } from '../components/layout'
 const Container = styled.div`
 h1{ 
     text-align: center;
-    font-size: 4rem;
+    font-size: 3.3rem;
+    margin-top: 2rem;
 }
 img{
-    margin: 0 auto;
-
+    display:block;
+   margin: 5rem auto 0;
 }
-
-padding: 0% 15% 10%; 
+padding: 3% 5%;
 
 p{
     margin-top:0;
     font-size: 2.9rem;
     font-family:'Nunito', sans-serif;
     font-weight: 500;
+    text-align: left;
 }
     @media (min-width: 768px) {
-        padding: 3% 15%;
+        img{ margin: 5rem auto 0;}
         display: grid;
         grid-template-columns: 1fr;
     }
+    
 `
 export default function about() {
     return (
         <Layout>
             <Container className='animate'>
 
-            <Image src='https://ph-static.imgix.net/glasshole_kitty_logo.png?auto=compress&codec=mozjpeg&cs=strip&auto=format&w=77&h=72&fit=max&dpr=1' width={150} height={180} alt='about-logo'></Image>
+            <Image 
+                src='https://ph-static.imgix.net/glasshole_kitty_logo.png?auto=compress&codec=mozjpeg&cs=strip&auto=format&w=77&h=72&fit=max&dpr=1' 
+                width={150} height={150} alt='about-logo'></Image>
             <h1>About Product Hunt</h1>
             <p>
                 Product Hunt surfaces the best new products, every day.
