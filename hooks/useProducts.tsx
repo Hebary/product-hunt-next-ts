@@ -1,12 +1,14 @@
 import { useState, useEffect, useContext } from 'react'
 import { FirebaseContext } from '../firebase'
-import { collection, getDocs, orderBy } from "firebase/firestore"
+import { collection, getDocs} from "firebase/firestore"
 
-
-export const useProducts = () => {
-
-interface dbProducts 
+export interface dbProducts 
     { id: string; }[]
+interface Products 
+    { products: dbProducts[]; }
+
+
+export function useProducts() : Products {
 
     const [products, setProducts ] = useState<dbProducts[]>([])
     
@@ -15,7 +17,7 @@ interface dbProducts
     useEffect( () => {
     const fireFetch = async () => {
         try {
-            const querySnapshot = await getDocs(collection(firebase.db, "products") );
+            const querySnapshot = await getDocs(collection(firebase.db, "products"));
             const dbProducts = querySnapshot.docs.map( doc => ({
                 id: doc.id,
                 ...doc.data()

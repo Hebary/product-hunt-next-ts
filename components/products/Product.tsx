@@ -112,12 +112,27 @@ const Pdescription = styled.p`
 
 
 export const Product = ({ product }: ProductProps) => {
-    const { name, id, comments, createdAt, urlImg, votes, description } = product;
+    const {
+        name,
+        id,
+        comments,
+        createdAt, 
+        urlImg, 
+        votes, 
+        description 
+    } = product;
+    
     return (
         <Li className='animate'>
             <Description>
                 <div>
-                    <Image width={350} style={{ objectFit: 'contain' }} height={200} src={urlImg} alt="product" />
+                    <Image
+                        width={350}
+                        style={{ objectFit: 'contain' }}
+                        height={200}
+                        src={urlImg}
+                        alt="product"
+                    />
                 </div>
                 <div>
                     <Link href="/products/[id]" as={`/products/${id}`}>
@@ -138,7 +153,7 @@ export const Product = ({ product }: ProductProps) => {
                 </div>
             </Description>
             <Votes>
-                <Image alt='arrow-votes' width={14} height={14} style={{marginBottom:'7px'}} src='/arrow.svg'></Image>
+                <Image alt='arrow-votes' width={14} height={14} style={{ marginBottom: '7px' }} src='/arrow.svg'></Image>
                 <p>{votes} <span>Votes</span></p>
             </Votes>
         </Li>
