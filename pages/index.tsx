@@ -13,7 +13,7 @@ export default function Home() : JSX.Element{
         <div className="list-products">
           <div className="container">
             <ul className="bg-white">
-              {products.map((product : any ) =>(
+              {products.map((product : any ) => (
                 <Product
                   key={product.id}
                   product={product}
