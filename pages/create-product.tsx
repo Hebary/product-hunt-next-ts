@@ -9,7 +9,7 @@ import { FormEvent, useContext, useState } from "react"
 import { FirebaseContext } from "../firebase"
 //Router
 import { useRouter } from "next/router"
-import { Error404 } from "../components/404"
+import { Error404 } from "../components/ui"
 import { addDoc, collection } from "firebase/firestore"
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 // 

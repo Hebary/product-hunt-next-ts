@@ -1,6 +1,6 @@
 import Head from "next/head"
 import { Global, css } from "@emotion/react"
-import { Header } from "../header"
+import { Header } from "../ui"
 
 interface LayoutProps {
     children: JSX.Element | JSX.Element[]

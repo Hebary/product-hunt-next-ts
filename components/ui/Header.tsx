@@ -1,9 +1,9 @@
 import Link from "next/link"
 import { FirebaseContext } from '../../firebase'
 import React, { useContext } from "react"
-import { Nav } from "../nav";
+import { Nav } from "../ui";
 import { ButtonNav, ButtonNav2, HeaderContainer, LinkWrapper, Logo } from "../ui";
-import { Search } from "../search";
+import { Search } from "../ui";
 
 
 

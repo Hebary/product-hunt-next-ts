@@ -1,6 +1,6 @@
 import { Layout }from "../components/layout"
 import { useRouter } from 'next/router'
-import { Product } from "../components/products";
+import { Product } from "../components/ui";
 import { useProducts } from "../hooks/useProducts";
 import { useEffect, useState } from "react";
 

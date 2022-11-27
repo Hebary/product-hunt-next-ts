@@ -194,3 +194,10 @@ export const Logo = styled.span`
             margin-top: 1rem;
         }
     `;
+
+    export * from './404'
+    export * from './Header'
+    export * from './Nav'
+    export * from './Product'
+    export * from './Search'
+    export * from './Spinner'
