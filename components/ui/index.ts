@@ -164,15 +164,15 @@ export const HeaderContainer = styled.div`
           justify-content: space-between;
       }
       @media (max-width: 768px) {
-          display: grid;
-          grid-template-columns: 1fr;
-          grid-template-rows: 2fr 1fr;
+        //   display: grid;
+        //   grid-template-columns: 1fr;
+        //   grid-template-rows: 2fr 1fr;
+        
         }
     `;
 export const LinkWrapper = styled.div`
         display: flex;
         align-items: center;
-        gap: 10px;
         flex-wrap: wrap;
         
     `;

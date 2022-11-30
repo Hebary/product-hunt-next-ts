@@ -12,15 +12,16 @@ export default function Searching() {
   const router = useRouter();
   const { q }  = router.query
   
-  useEffect(()=>{
+  useEffect(
+    ()=>{
     const ref = q?.toString().toLowerCase();
     const filter = products.filter((product : any)=> {
-    return(
-      product.name.toLowerCase().includes(ref) || 
-      product.description.toLowerCase().includes(ref)
-    )
-  })
-    setResults(filter)
+      return(
+        product.name.toLowerCase().includes(ref) || 
+        product.description.toLowerCase().includes(ref)
+      )
+    })
+  setResults(filter)
   },[q, products]);
 
   return (

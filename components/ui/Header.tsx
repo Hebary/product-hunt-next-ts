@@ -18,23 +18,20 @@ export const Header: React.FC = () => {
             <Logo>
               P</Logo>
           </Link>
-          <LinkWrapper>
             <Search />
             <Nav />
           </LinkWrapper>
-        </LinkWrapper>
 
 
         <LinkWrapper>
           {user ?
             <>
-              <p style={{marginLeft:'1.5rem'}}>Hi {user?.displayName}</p>
+              <p style={{margin:'0 1.5rem'}}>Hi {user?.displayName}</p>
                 <ButtonNav2
                   onClick={() => firebase.logOut()}
                 >
                   Sign out
                 </ButtonNav2>
-
             </> :
             <>
               <Link href="/login">
