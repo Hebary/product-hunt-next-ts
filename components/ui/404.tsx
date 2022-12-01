@@ -26,13 +26,13 @@ const A = styled.a`
         transition:all .3s;
     }
     `
-export const Error404 : FC = () => {
-  return (
-    <Title>
-        Something went wrong, please try again.
-        <Link href="/">
-            <A>Return</A>
-        </Link>
+export const Error404 : FC = (): JSX.Element => {
+    return (
+        <Title>
+            Something went wrong, please try again.
+            <Link href="/">
+                <A>Return</A>
+            </Link>
     </Title>
   )
 }

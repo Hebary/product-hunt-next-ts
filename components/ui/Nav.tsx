@@ -5,9 +5,8 @@ import { FirebaseContext } from '../../firebase'
 import { useContext } from "react"
 
 
-
-
-export const Nav: React.FC = () => {
+export const Nav: React.FC = () : JSX.Element => {
+  
   const { user } = useContext(FirebaseContext);
 
   const Nav = styled.div`

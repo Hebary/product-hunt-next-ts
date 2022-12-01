@@ -19,7 +19,6 @@ export const InputText = styled.input`
 const InputBtn = styled.button`
     display: flex;
     align-items: center;
-    width: 3rem;
     height: 3rem;
     position: absolute;
     right: .5rem;

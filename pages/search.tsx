@@ -7,6 +7,7 @@ import { useEffect, useState } from "react";
 export default function Searching() {
 
   const { products }= useProducts();
+  
   const [results, setResults] = useState<any>([])
 
   const router = useRouter();

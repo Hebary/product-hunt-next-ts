@@ -6,23 +6,21 @@ import { ButtonNav, ButtonNav2, HeaderContainer, LinkWrapper, Logo } from "../ui
 import { Search } from "../ui";
 
 
-
-
-export const Header: React.FC = () => {
-    const { user, firebase } = useContext(FirebaseContext);
+export const Header: React.FC = () : JSX.Element => {
+  const { user, firebase } = useContext( FirebaseContext );
+  
   return (
     <header>
       <HeaderContainer>
         <LinkWrapper>
           <Link href="/">
             <Logo>
-              P</Logo>
+              P
+            </Logo>
           </Link>
             <Search />
             <Nav />
-          </LinkWrapper>
-
-
+        </LinkWrapper>
         <LinkWrapper>
           {user ?
             <>
