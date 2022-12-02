@@ -173,7 +173,6 @@ export const HeaderContainer = styled.div`
 export const LinkWrapper = styled.div`
         display: flex;
         align-items: center;
-        flex-wrap: wrap;
         
     `;
 export const Logo = styled.span`

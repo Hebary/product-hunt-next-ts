@@ -34,9 +34,6 @@ const InputBtn = styled.button`
 const Form = styled.form`
     position: relative;
     left: 10px;
-    @media (max-width: 768px) {
-        margin: 0 auto;
-    }
 
 `;
 
