@@ -169,6 +169,9 @@ export const LinkWrapper = styled.div`
         display: flex;
         align-items: center;
         flex-wrap: wrap;
+        @media (max-width: 768px) {
+            a, div { margin: 0 auto;}
+        }
     `;
 export const Logo = styled.span`
         background: var(--orange);

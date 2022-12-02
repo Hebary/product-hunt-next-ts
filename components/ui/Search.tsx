@@ -13,10 +13,11 @@ export const InputText = styled.input`
     &:focus{
         outline: none;
     }
-    @media (min-width: 768px) {
-        max-width: 300px;
+    @media (max-width: 480px) {
+        max-width: 90%;
     }
-`;
+    margin: 0 10px;
+    `;
 
 const InputBtn = styled.button`
     display: flex;
@@ -30,15 +31,14 @@ const InputBtn = styled.button`
     &:hover{
         cursor: pointer;
     }
+    @media (max-width: 480px) {
+        left: 160px;
+    }
 `;
 const Form = styled.form`
+    position: relative;
+    left: 10px;
 
-position: relative;
-    left:7px;
-    @media (max-width: 768px) {
-        margin: 0 auto;
-        width: 60%;
-    }
 `;
 
 export const Search : FC = () => { 
