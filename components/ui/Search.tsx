@@ -8,13 +8,14 @@ import Router from 'next/router';
 
 
 export const InputText = styled.input`
-    max-width: 300px;
     padding: 1.3rem;
     border: 1px solid var(--gray3);
     &:focus{
         outline: none;
     }
-`;
+    width: 60%;
+    margin-left: 10px;
+    `;
 
 const InputBtn = styled.button`
     display: flex;
@@ -28,13 +29,15 @@ const InputBtn = styled.button`
     &:hover{
         cursor: pointer;
     }
+        left:90px;
 `;
 const Form = styled.form`
     position: relative;
-    left:7px;
+    left: 10px;
     @media (max-width: 768px) {
         margin: 0 auto;
     }
+
 `;
 
 export const Search : FC = () => { 
