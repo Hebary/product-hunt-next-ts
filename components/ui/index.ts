@@ -182,7 +182,7 @@ export const Logo = styled.span`
         font-size: 2.5rem;
         line-height: 1.5;
         font-weight: 700;
-        margin: 1.5rem auto;
+        margin: 1 rem auto;
         font-family: 'Nunito', sans-serif;
         color: #fff;
         padding: 0.4rem 1.5rem;

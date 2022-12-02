@@ -37,8 +37,9 @@ const InputBtn = styled.button`
 `;
 const Form = styled.form`
     position: relative;
+    @media (max-width: 480px) {
     left: -22px;
-
+    }
 `;
 
 export const Search : FC = () => { 
