@@ -32,12 +32,12 @@ const InputBtn = styled.button`
         cursor: pointer;
     }
     @media (max-width: 480px) {
-        left: 160px;
+        left: 170px;
     }
 `;
 const Form = styled.form`
     position: relative;
-    left: 10px;
+    left: -22px;
 
 `;
 

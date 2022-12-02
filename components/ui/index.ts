@@ -170,7 +170,11 @@ export const LinkWrapper = styled.div`
         align-items: center;
         flex-wrap: wrap;
         @media (max-width: 768px) {
-            a, div { margin: 0 auto;}
+            justify-content: center;
+            a{gap:0 3rem;}
+            div{
+                gap:0 2rem;
+            }
         }
     `;
 export const Logo = styled.span`
@@ -188,7 +192,7 @@ export const Logo = styled.span`
         }
         @media (max-width: 768px) {
             display:inline-block;
-            margin-top: 1rem;
+            margin: 1rem 2rem 1rem 0;
         }
     `;
 
