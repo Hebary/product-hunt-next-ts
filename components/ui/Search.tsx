@@ -8,11 +8,13 @@ import Router from 'next/router';
 
 
 export const InputText = styled.input`
-    max-width: 300px;
     padding: 1.3rem;
     border: 1px solid var(--gray3);
     &:focus{
         outline: none;
+    }
+    @media (min-width: 768px) {
+        max-width: 300px;
     }
 `;
 
@@ -30,10 +32,12 @@ const InputBtn = styled.button`
     }
 `;
 const Form = styled.form`
-    position: relative;
+
+position: relative;
     left:7px;
     @media (max-width: 768px) {
         margin: 0 auto;
+        width: 60%;
     }
 `;
 
