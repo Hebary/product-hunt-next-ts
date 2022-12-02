@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router'
 import { ChangeEvent, useEffect, useState } from 'react';
 import { doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
-import { Error404 } from '../../components/404'
+import { Error404 } from '../../components/ui/404'
 import { Layout } from '../../components/layout'
 import styled from '@emotion/styled';
 import { formatDistanceToNow } from 'date-fns'
@@ -10,7 +10,7 @@ import { FirebaseContext } from '../../firebase/context';
 import { useContext } from 'react'
 import { Button } from '../../components/ui'
 import Image from 'next/image';
-import { Spinner } from '../../components/spinner';
+import { Spinner } from '../../components/ui/Spinner';
 import Link from 'next/link';
 import Swal from 'sweetalert2'
 

@@ -1,7 +1,6 @@
 import { Layout } from "../components/layout";
 import { Product } from "../components/ui"
 import { useProducts } from "../hooks/useProducts"
-import { ProductProps } from "../interfaces";
 
 export default function Home() : JSX.Element{
 

@@ -29,7 +29,7 @@ p{
     }
     
 `
-export default function about() {
+export default function about() : JSX.Element{
     return (
         <Layout>
             <Container 
