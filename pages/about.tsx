@@ -1,4 +1,5 @@
 import styled from '@emotion/styled'
+import { NextPage } from 'next'
 import Image from 'next/image'
 import React from 'react'
 import { Layout } from '../components/layout'
@@ -29,7 +30,7 @@ p{
     }
     
 `
-export default function about() : JSX.Element{
+const About:NextPage = () =>{
     return (
         <Layout>
             <Container 
@@ -47,3 +48,5 @@ export default function about() : JSX.Element{
         </Layout>
     )
 }
+
+export default About

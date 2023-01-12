@@ -1,8 +1,9 @@
+import { NextPage } from "next";
 import { Layout } from "../components/layout";
 import { Product } from "../components/ui"
 import { useProducts } from "../hooks/useProducts"
 
-export default function Home() : JSX.Element{
+const Home: NextPage = () => {
 
   const { products } = useProducts();
 
@@ -25,3 +26,4 @@ export default function Home() : JSX.Element{
     </div>
   )
 }
+export default Home

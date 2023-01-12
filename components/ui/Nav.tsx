@@ -1,11 +1,10 @@
-import styled from "@emotion/styled"
 import Link from "next/link"
-import React from "react"
-import { FirebaseContext } from '../../firebase'
 import { useContext } from "react"
+import { FirebaseContext } from '../../firebase'
+import styled from "@emotion/styled"
 
 
-export const Nav: React.FC = () : JSX.Element => {
+export const Nav: React.FC = () => {
   
   const { user } = useContext(FirebaseContext);
 

@@ -127,6 +127,23 @@ export const Submit = styled.input`
             transition:all .3s;
         }
     `;
+export const CommentButton = styled.button`
+    background-color: var(--orange);
+    font-weight: bold;
+    font-family: 'Nunito', sans-serif;
+    color:#fff;
+    width: 100%;
+    border-radius:.7rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    letter-spacing: .15rem;
+    border: none;
+    &:hover{
+            background-color: var(--orange2);
+            cursor: pointer;
+            transition:all .3s;
+        }
+    `;
 
 
 export const Errors = styled.span`
@@ -196,9 +213,9 @@ export const Logo = styled.span`
         }
     `;
 
-    export * from './404'
-    export * from './Header'
-    export * from './Nav'
-    export * from './Product'
-    export * from './Search'
-    export * from './Spinner'
+    export { Error404 } from './404'
+    export { Header } from './Header'
+    export { Nav } from './Nav'
+    export { Product } from './Product'
+    export { Search } from './Search'
+    export { Spinner } from './Spinner'

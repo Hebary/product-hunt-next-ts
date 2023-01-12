@@ -1,9 +1,9 @@
-import styled from '@emotion/styled'
-
-import { FC, FormEvent, useState } from 'react';
-// import Router from 'next/router';
 import Image from 'next/image';
 import Router from 'next/router';
+import { FormEvent, useState } from 'react';
+import styled from '@emotion/styled'
+
+// import Router from 'next/router';
 
 
 
@@ -42,7 +42,7 @@ const Form = styled.form`
     }
 `;
 
-export const Search : FC = () => { 
+export const Search: React.FC = () => { 
 
     const [search, setSearch] = useState('');
     

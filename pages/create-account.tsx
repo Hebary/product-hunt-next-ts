@@ -5,13 +5,14 @@ import { FirebaseContext } from "../firebase"
 import { validateCreateAccount } from '../validations'
 import { Layout } from "../components/layout"
 import { Form, Field, Submit, Errors } from "../components/ui/"
+import { NextPage } from "next"
 
 
 
 type message = string | null
 
 
-export default function CreateAccount(): JSX.Element {
+const CreateAccount: NextPage = () => {
 
   const { firebase } = useContext(FirebaseContext)
   const router = useRouter()
@@ -121,3 +122,4 @@ export default function CreateAccount(): JSX.Element {
     </Layout>
   )
 }
+export default CreateAccount

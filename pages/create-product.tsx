@@ -12,12 +12,13 @@ import { useRouter } from "next/router"
 import { Error404 } from "../components/ui"
 import { addDoc, collection } from "firebase/firestore"
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
+import { NextPage } from "next"
 // 
 
 
 type Img = { name: string | null, url: string | null | undefined | Blob }
 
-export default function NewProduct(): JSX.Element {
+const CreateProduct: NextPage = () =>{
 
 
   const router = useRouter()

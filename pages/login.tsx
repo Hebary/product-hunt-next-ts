@@ -8,11 +8,12 @@ import { useState } from "react"
 //Router
 import { useRouter } from "next/router"
 import { validateLogin } from "../validations"
+import { NextPage } from "next"
 
 
 type message = string | null
 
-export default function Login() {
+const Login: NextPage = () =>{
     const router = useRouter()
     const [error, setError] = useState<message>(null)
 
@@ -88,3 +89,5 @@ export default function Login() {
         </Layout>
     )
 }
+
+export default Login

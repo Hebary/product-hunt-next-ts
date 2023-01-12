@@ -3,8 +3,9 @@ import { useRouter } from 'next/router'
 import { Product } from "../components/ui";
 import { useProducts } from "../hooks/useProducts";
 import { useEffect, useState } from "react";
+import { NextPage } from "next";
 
-export default function Searching() {
+const Searching: NextPage = () => {
 
   const { products }= useProducts();
   
@@ -44,3 +45,4 @@ export default function Searching() {
     </div>
     )
 }
+export default Searching

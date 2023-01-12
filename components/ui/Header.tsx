@@ -1,12 +1,12 @@
 import Link from "next/link"
+import  { useContext } from "react"
 import { FirebaseContext } from '../../firebase'
-import React, { useContext } from "react"
 import { Nav } from "../ui";
 import { ButtonNav, ButtonNav2, HeaderContainer, LinkWrapper, Logo } from "../ui";
 import { Search } from "../ui";
 
 
-export const Header: React.FC = () : JSX.Element => {
+export const Header: React.FC = () => {
   const { user, firebase } = useContext( FirebaseContext );
   
   return (

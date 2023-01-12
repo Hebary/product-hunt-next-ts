@@ -1,18 +1,20 @@
+import Link from 'next/link';
+import Image from 'next/image';
 import { useRouter } from 'next/router'
-import { ChangeEvent, useEffect, useState } from 'react';
-import { doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
-import { Error404 } from '../../components/ui/404'
-import { Layout } from '../../components/layout'
+import {useContext, ChangeEvent, useEffect, useState, FormEvent } from 'react';
+import { doc, getDoc, updateDoc, deleteDoc } from 'firebase/firestore';
 import styled from '@emotion/styled';
 import { formatDistanceToNow } from 'date-fns'
-import { ButtonNav2, Field, Submit } from '../../components/ui'
-import { FirebaseContext } from '../../firebase/context';
-import { useContext } from 'react'
-import { Button } from '../../components/ui'
-import Image from 'next/image';
-import { Spinner } from '../../components/ui/Spinner';
-import Link from 'next/link';
 import Swal from 'sweetalert2'
+
+import { FirebaseContext } from '../../firebase/context';
+import { Error404 } from '../../components/ui/404'
+import { Layout } from '../../components/layout'
+import { ButtonNav2, CommentButton, Field, Submit } from '../../components/ui'
+import { Button } from '../../components/ui'
+import { Spinner } from '../../components/ui/Spinner';
+import { NextPage } from 'next';
+import { ProductProps } from '../../interfaces';
 
 
 const Wrapper = styled.div`
@@ -178,7 +180,7 @@ type Product = {
 
 
 
-export default function Product(): JSX.Element {
+const Product: NextPage = ()=> {
 
     const [product, setProduct] = useState<Product>({} as Product)
     const [error, setError] = useState(false)
@@ -195,11 +197,11 @@ export default function Product(): JSX.Element {
         if (id && queryDB) {
             const fireFetch = async () => {
                 try {
-                    const docRef = doc(firebase.db, "products", id as string);
+                    const docRef = doc(firebase.db, 'products', id as string);
                     const docSnap = await getDoc(docRef);
 
                     if (docSnap.exists()) {
-                        const product = { ...docSnap.data(), id: docSnap.id }
+                        const product: Product = { ...docSnap.data(), id: docSnap.id }
                         setProduct(product);
                         setQueryDB(false)
 
@@ -209,7 +211,7 @@ export default function Product(): JSX.Element {
 
                     }
                 } catch (error) {
-                    console.log("Error getting document:", error);
+                    console.log('Error getting document:', error);
                 }
             }
             fireFetch();
@@ -237,7 +239,7 @@ export default function Product(): JSX.Element {
             if (hasVoted?.includes(user.uid as string)) {
                 return
             }
-            const docRef = doc(firebase.db, "products", (id as string));
+            const docRef = doc(firebase.db, 'products', (id as string));
             const docSnap = await getDoc(docRef);
             const newVotes = docSnap.data()?.votes + 1;
             await updateDoc(docRef, { votes: newVotes, hasVoted: [...hasVoted || [], user.uid] });
@@ -255,16 +257,16 @@ export default function Product(): JSX.Element {
             })
         }
 
-        const addComent = async (e: any) => {
-            e.preventDefault();
+        const addComent = async (e :FormEvent<HTMLFormElement>) => {
+            e.preventDefault()
             if (!user) {
                 return router.push('/login')
             }
             comment.userid = user.uid;
             comment.userName = user.displayName;
-            const newComments = [...comments || [], comment];
-
-            const docRef = doc(firebase.db, "products", id as string);
+            
+            const newComments = [...comments || [] , comment];
+            const docRef = doc(firebase.db, 'products', id as string);
             await getDoc(docRef);
             await updateDoc(docRef, { comments: newComments });
 
@@ -295,10 +297,10 @@ export default function Product(): JSX.Element {
                     router.push('/login')
                     return;
                 }
-                const docRef = doc(firebase.db, "products", (id as string));
+                const docRef = doc(firebase.db, 'products', (id as string));
                 await getDoc(docRef);
                 Swal.fire({
-                    title: 'Are you sure?',
+                    title: "Are you sure?",
                     text: "You won't be able to revert this!",
                     icon: 'warning',
                     showCancelButton: true,
@@ -347,13 +349,13 @@ export default function Product(): JSX.Element {
                             {user &&
                                 <>
                                     <h2>Leave your coments</h2>
-                                    <form id='form' onSubmit={addComent}>
+                                    <form id='form' onSubmit={e => addComent(e)}>
                                         <Field>
-                                            <Input type="text" name="message" onChange={comentChange} />
+                                            <Input type='text' name='message' onChange={comentChange} />
                                         </Field>
                                         <Submit
-                                            type="submit"
-                                            value="Add Coments"
+                                            type='submit'
+                                            value='Add Coments'
                                         />
                                     </form>
                                 </>
@@ -362,7 +364,7 @@ export default function Product(): JSX.Element {
                                 <Votes>
                                     <p> {votes} Votes</p>
                                     {user &&
-                                        <Button type="button"
+                                        <Button type='button'
                                             onClick={addVote}
                                         >
                                             Vote
@@ -377,7 +379,7 @@ export default function Product(): JSX.Element {
                             </Flex>
                             <Heading>All coments</Heading>
                             {
-                                comments && comments?.length === 0 ? "There are no coments" : (
+                                comments && comments?.length === 0 ? 'There are no coments' : (
 
                                     <ul>
                                         {comment && comments?.map((comment: Comment, i: number) => (
@@ -409,3 +411,4 @@ export default function Product(): JSX.Element {
         )
     }
 }
+export default Product

@@ -1,6 +1,5 @@
+import Link from 'next/link'
 import styled from '@emotion/styled'
-import Link from 'next/dist/client/link'
-import { FC } from 'react'
 
 const Title = styled.h1`
     font-size: 3rem;
@@ -26,7 +25,7 @@ const A = styled.a`
         transition:all .3s;
     }
     `
-export const Error404 : FC = (): JSX.Element => {
+export const Error404 : React.FC = (): JSX.Element => {
     return (
         <Title>
             Something went wrong, please try again.
